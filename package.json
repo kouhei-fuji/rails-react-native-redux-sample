@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "author": "Kouhei Fujigaya",
   "license": "MIT",
@@ -17,10 +19,16 @@
     "jest": "17.0.3",
     "jest-react-native": "17.0.3",
     "react-native-cli": "^1.2.0",
-    "react-test-renderer": "15.3.2"
+    "react-test-renderer": "15.3.2",
+    "remote-redux-devtools": "^0.5.4"
   },
   "dependencies": {
+    "axios": "^0.15.2",
     "react": "15.3.2",
-    "react-native": "0.37.0"
+    "react-native": "0.37.0",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.1.0",
+    "redux-saga": "^0.13.0"
   }
 }
