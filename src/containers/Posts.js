@@ -16,6 +16,6 @@ export default class Posts extends Component {
 
   render() {
     const { isRequesting, data } = this.props.state.posts
-    return isRequesting ? <Loading /> : <PostList posts={data} />
+    return isRequesting ? <Loading /> : <PostList posts={data} transition={({ id, title }) => moveTo('post', { id, title })} />
   }
 }
