@@ -26,6 +26,11 @@ export default class Post extends Component {
     this.props.actions.fetchPostRequest(id)
   }
 
+  handlePress() {
+    const { id } = this.props.state.scene
+    this.props.actions.deletePostRequest(id)
+  }
+
   render() {
     const { isRequesting, data } = this.props.state.post
     return isRequesting
@@ -34,6 +39,7 @@ export default class Post extends Component {
     ) : (
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <Text>{data && data.body}</Text>
+        <Text style={{ textAlign: 'center', marginTop: 20 }} onPress={::this.handlePress}>Delete</Text>
       </ScrollView>
     )
   }

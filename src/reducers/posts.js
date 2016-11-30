@@ -50,14 +50,11 @@ const posts = handleActions({
     isRequesting: true,
   }),
 
-  [deletePostSuccess]: (state, action) => {
-    const { index } = action.payload
-    return {
-      ...state,
-      isRequesting: false,
-      data: state.data.splice(index, 1),
-    }
-  },
+  [deletePostSuccess]: (state, action) => ({
+    ...state,
+    isRequesting: false,
+    data: (state.data || []).filter(post => post && post.id != action.payload),
+  }),
 
   [deletePostFailure]: (state, action) => ({
     ...state,
