@@ -8,6 +8,7 @@ import * as actions from './actions'
 import Posts from './containers/Posts'
 import Post from './containers/Post'
 import PostEdit from './containers/PostEdit'
+import PostNew from './containers/PostNew'
 
 function mapStateToProps(state) {
   return { state }
@@ -42,6 +43,13 @@ export default Actions.create(
       component={connected(PostEdit)}
       hideNavBar={false}
       title="Edit"
+      backTitle="Back"
+    />
+    <Scene
+      key="postNew"
+      component={connected(PostNew)}
+      hideNavBar={false}
+      title="New"
       backTitle="Back"
     />
   </Scene>
